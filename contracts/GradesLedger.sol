@@ -5,8 +5,13 @@ struct Student
 {
     string name;
 
-    // We use string as the grade, because solidity does not support any kind of float / double type.
+    /* 
+     We use string as the grade, because solidity does not 
+     support any kind of float / double type.
+    */ 
+
     string grade;
+    
 }
 
 contract GradesLedger
@@ -15,6 +20,7 @@ contract GradesLedger
 
     constructor ()
     {}
+
 
     function add(address studentAddress, string memory name, string memory initialGrade) public 
     {
@@ -33,9 +39,12 @@ contract GradesLedger
 
     function set(address studentAddress, string memory name, string memory grade) public
     {
-        // At the moment solidity does not support any kind of float / double type
-        // therefore we cant set max limit and the way its implemented the grade 
-        // can be set to '6.99' or even 'test'
+        /**
+         At the moment solidity does not support any kind of float / double type
+         therefore we cant set max limit and the way its implemented the grade 
+         can be set to '6.99' or even 'test'
+        */ 
+
         require(bytes(grade)[0] != "0", "The grade must be greater than 1"); 
         require(bytes(grade)[0] != "7", "The grade exceeded the limit of 6");
         require(bytes(grade).length < 5, "The grade must be in this format: x.xx");
