@@ -7,7 +7,6 @@ struct Student
 
     // We use string as the grade, because solidity does not support any kind of float / double type.
     string grade;
-    
 }
 
 contract GradesLedger
