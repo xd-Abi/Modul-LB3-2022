@@ -41,7 +41,7 @@ contract GradesLedger
     {
         /**
          At the moment solidity does not support any kind of float / double type
-         therefore we cant set max limit and the way its implemented the grade 
+         therefore we cant validate and the way its implemented the grade 
          can be set to '6.99' or even 'test'
         */ 
 
